@@ -67,6 +67,7 @@ public class subjectServlet extends HttpServlet {
 			{
 				if(subType.equalsIgnoreCase("theory")) {
 					request.setAttribute("subCode", subCode);
+					request.setAttribute("subName", subName);
 					RequestDispatcher dis=request.getRequestDispatcher("addQuestionT.jsp");
 					dis.forward(request, response);
 				}
@@ -80,7 +81,9 @@ public class subjectServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
+			RequestDispatcher dispatch=request.getRequestDispatcher("newFeedback.jsp");
+			request.setAttribute("info", "Subject already exists");
+			dispatch.forward(request, response);
 			e1.printStackTrace();
 		}
 	

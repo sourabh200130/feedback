@@ -59,7 +59,7 @@ public class loginServlet extends HttpServlet {
             if(result.next()){  
             	HttpSession session=request.getSession();
                 session.setAttribute("uname",username);
-            	RequestDispatcher dispatch=request.getRequestDispatcher("home.jsp");
+            	RequestDispatcher dispatch=request.getRequestDispatcher("semSelection.jsp");
     			request.setAttribute("username",uid);
     			dispatch.forward(request, response);
             }else{

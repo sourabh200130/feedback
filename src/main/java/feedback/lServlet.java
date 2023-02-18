@@ -60,14 +60,15 @@ public class lServlet extends HttpServlet {
 			// connection: url, username,pass
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","");
 			// writing query
-			String qry="insert into subject(subCode,one,two,three,four,five,six,seven,eight) values(?,?,?,?,?)";
+			String qry="insert into labq(subCode,one,two,three,four,five,six,seven,eight) values(?,?,?,?,?,?,?,?,?)";
 			// Writing statement
 			PreparedStatement ps=con.prepareStatement(qry);
-			ps.setString(1, subName);ps.setString(2, subCode);ps.setString(3, sem);ps.setString(4, lecName);ps.setString(5, subType);
+			ps.setString(1, subCode);ps.setString(2, one);ps.setString(3, two);ps.setString(4, three);ps.setString(5, four);ps.setString(6,five);
+			ps.setString(7,six);ps.setString(8,seven);ps.setString(9,eight);
 			
 			//execute 
 			int ack=ps.executeUpdate();
-			RequestDispatcher dis=request.getRequestDispatcher("signup.jsp");
+			RequestDispatcher dis=request.getRequestDispatcher("staffHome.jsp");
 			if(ack!=0)
 			{
 				System.out.println("Record inserted");
