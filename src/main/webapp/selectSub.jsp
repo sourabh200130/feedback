@@ -88,6 +88,7 @@ h3, h5 {
 				<tr>
 					<th>Subject Name</th>
 					<th>Subject Code</th>
+					<th>Subject type</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -99,8 +100,14 @@ h3, h5 {
 				<tr>
 					<td><%=obj.getSubName()%></td>
 					<td><%=obj.getSubCode()%></td>
-					<td><form action="feedbackServlet" method="post">
-					<button value=<%=obj.getSubCode() %> type="submit" > Submit </button></form>		
+					<td><%=obj.getType()%></td>
+					<%if(obj.getType().equalsIgnoreCase("theory")) {%>
+					<td><form action="tFeedbackServlet" method="post">
+					<button name="subCode" value=<%=obj.getSubCode() %> type="submit" > Submit </button></form></td>
+					<%} else{ %>	
+					<td><form action="lFeedbackServlet" method="post">
+					<button name="subCode" value=<%=obj.getSubCode() %> type="submit" > Submit </button></form></td>
+					<%} %>
 				</tr>
 				
 				<%} %>	
