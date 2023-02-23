@@ -46,8 +46,9 @@
 				for (theory obj : hey) {
 	%>
 	
-	<form class="col-lg-8 col-md-10 col-sm-12 shadow-lg p-3" action="insertingT" method="post">
+	<form class="col-lg-8 col-md-10 col-sm-12 shadow-lg p-3" action="insertingTServlet" method="post">
 		<div class="form-checked pt-2 pb-2">
+		<input type="text" value=<%=obj.getSubCode() %> name=subCode readonly>
 			<div class="form-inline">
 			<label for="q1" class="col display-6 pb-1" id="Q1"><%=obj.getOne()%></label>
                 <ol class="list-group">
