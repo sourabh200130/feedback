@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class viewFeedbackServlet
+ * Servlet implementation class missingFeedbackServlet
  */
-@WebServlet("/viewFeedbackServlet")
-public class viewFeedbackServlet extends HttpServlet {
+@WebServlet("/missingFeedbackServlet")
+public class missingFeedbackServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public viewFeedbackServlet() {
+    public missingFeedbackServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

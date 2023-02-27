@@ -1,7 +1,15 @@
 package feedback;
 
 public class theory {
-String subCode,one,two,three,four,five,six,seven,eight,nine,ten;
+String subCode,one,two,three,four,five,six,seven,eight,nine,ten,USN;
+
+public String getUSN() {
+	return USN;
+}
+
+public void setUSN(String uSN) {
+	USN = uSN;
+}
 
 public String getSubCode() {
 	return subCode;

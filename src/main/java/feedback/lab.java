@@ -1,7 +1,15 @@
 package feedback;
 
 public class lab {
-	String subCode,one,two,three,four,five,six,seven,eight;
+	String subCode,one,two,three,four,five,six,seven,eight,USN;
+
+	public String getUSN() {
+		return USN;
+	}
+
+	public void setUSN(String uSN) {
+		USN = uSN;
+	}
 
 	public String getSubCode() {
 		return subCode;

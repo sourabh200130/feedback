@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+
+	<%@page import="feedback.theory"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,47 +105,45 @@ h3, h5 {
 		</div>
 	</nav>
 	<%
-	List<subject> hey = (List<subject>) request.getAttribute("data");
+	List<theory> hey = (List<theory>) request.getAttribute("data");
 	%>
 	<div class="container1">
 		<table class="table caption-top responsive">
 			<thead class="thead-danger">
 				<tr>
-					<th>Subject Name</th>
-					<th>Subject Code</th>
-					<th>Subject type</th>
-					<th>Action</th>
+					<th>USN</th>
+					<th>One</th>
+					<th>Two</th>
+					<th>Three</th>
+					<th>Four</th>
+					<th>Five</th>
+					<th>Six</th>
+					<th>Seven</th>
+					<th>Eight</th>
+					<th>Nine</th>
+					<th>Ten</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
-				for (subject obj : hey) {
+				for (theory obj : hey) {
 				%>
 
 				<tr>
-					<td><%=obj.getSubName()%></td>
-					<td><%=obj.getSubCode()%></td>
-					<td><%=obj.getType()%></td>
-					<%
-					if (obj.getType().equalsIgnoreCase("theory")) {
-					%>
-					<td><form action="tFeedbackServlet" method="post">
-					<button name="subCode" value=<%=obj.getSubCode()%> type="submit"> Submit </button>
-						</form></td>
-					<%
-					} else {
-					%>	
-					<td><form action="lFeedbackServlet" method="post">
-					<button name="subCode" value=<%=obj.getSubCode()%> type="submit"> Submit </button>
-						</form></td>
-					<%
-					}
-					%>
+					<td><%=obj.getUSN()%></td>
+					<td><%=obj.getOne()%></td>
+					<td><%=obj.getTwo()%></td>
+					<td><%=obj.getThree()%></td>
+					<td><%=obj.getFour()%></td>
+					<td><%=obj.getFive()%></td>
+					<td><%=obj.getSix()%></td>
+					<td><%=obj.getSeven()%></td>
+					<td><%=obj.getEight()%></td>
+					<td><%=obj.getNine()%></td>
+					<td><%=obj.getTen()%></td>
 				</tr>
 				
-				<%
-								}
-								%>	
+				<%}%>	
 			</tbody>
 		</table>		
 	</div>

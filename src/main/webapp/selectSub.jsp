@@ -26,15 +26,14 @@
 	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
 	crossorigin="anonymous"></script>
 <style>
-.container1 {
+.container {
 	text-color: black;
-	background: grey;
+	background: #20c997;
 	opacity: 0.95;
+	border-radius: 15px;
 }
 
 body {
-
-
 	background-attachment: fixed;
 	background-size: 100% 110%;
 }
@@ -65,25 +64,17 @@ h3, h5 {
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				<a class="navbar-brand">E-VOTE</a>
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="home.jsp">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="list">Candidate
-							List</a></li>
-					<li class="nav-item"><a class="nav-link" href="vote.jsp">Vote</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="ResultServlet">Result</a>
-					</li>
-				</ul>
+				<a class="navbar-brand">FEEDBACK</a>
+
 			</div>
 		</div>
 	</nav>
 	<%
 	List<subject> hey = (List<subject>) request.getAttribute("data");
 	%>
-	<div class="container1">
-		<table class="table caption-top responsive">
+	<div class="container">
+		<table
+			class="table caption-top responsive table-success table-striped">
 			<thead class="thead-danger">
 				<tr>
 					<th>Subject Name</th>
@@ -101,18 +92,30 @@ h3, h5 {
 					<td><%=obj.getSubName()%></td>
 					<td><%=obj.getSubCode()%></td>
 					<td><%=obj.getType()%></td>
-					<%if(obj.getType().equalsIgnoreCase("theory")) {%>
+					<%
+					if (obj.getType().equalsIgnoreCase("theory")) {
+					%>
 					<td><form action="tFeedbackServlet" method="post">
-					<button name="subCode" value=<%=obj.getSubCode() %> type="submit" > Submit </button></form></td>
-					<%} else{ %>	
+							<button name="subCode" value=<%=obj.getSubCode()%> type="submit"
+								class="btn btn-info">Feedback</button>
+						</form></td>
+					<%
+					} else {
+					%>
 					<td><form action="lFeedbackServlet" method="post">
-					<button name="subCode" value=<%=obj.getSubCode() %> type="submit" > Submit </button></form></td>
-					<%} %>
+							<button name="subCode" value=<%=obj.getSubCode()%> type="submit"
+								class="btn btn-info">Feedback</button>
+						</form></td>
+					<%
+					}
+					%>
 				</tr>
-				
-				<%} %>	
+
+				<%
+				}
+				%>
 			</tbody>
-		</table>		
+		</table>
 	</div>
 </body>
 </html>

@@ -45,7 +45,7 @@ public class semServlet extends HttpServlet {
 
 
 		List<subject> store=new ArrayList<subject>();// dynamic storage to keep objects
-		String sem = request.getParameter("type");
+		String sem = (String) request.getAttribute("sem");
 		System.out.println(sem);
 
 		try {

@@ -26,7 +26,7 @@ html {
 	margin: auto;
 	border: 1px;
 	border-radius: 15px;
-	background: #d69d66;
+	background: lightblue;
 }
 
 .logo {
@@ -140,9 +140,9 @@ p {
 <body>
 	<div class="body-content">
 		<div class="container">
-			<div class="logo">
+			<!-- <div class="logo">
 				<img src="res/logo.png" alt="Company Logo" srcset="">
-			</div>
+			</div> -->
 			<%
 			String msg = (String) request.getAttribute("info");
 			%>

@@ -52,15 +52,18 @@ public class loginServlet extends HttpServlet {
         {
         	Class.forName("com.mysql.cj.jdbc.Driver");
         	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","");
-            PreparedStatement statement = con.prepareStatement("select studentUSN, studentPass from studentlogin where studentUSN =? and studentPass=?");
+            PreparedStatement statement = con.prepareStatement("select studentUSN, studentPass, studentSem from studentlogin where studentUSN =? and studentPass=?");
             statement.setString(1, username);
             statement.setString(2, password);
             ResultSet result = statement.executeQuery();
-            if(result.next()){  
+            if(result.next()){ 
+                String sem=result.getString("studentSem");
+                System.out.println(sem);
             	HttpSession session=request.getSession();
                 session.setAttribute("uname",username);
-            	RequestDispatcher dispatch=request.getRequestDispatcher("semSelection.jsp");
+            	RequestDispatcher dispatch=request.getRequestDispatcher("semServlet");
     			request.setAttribute("username",uid);
+    			request.setAttribute("sem",sem);
     			dispatch.forward(request, response);
             }else{
             	RequestDispatcher dispatch=request.getRequestDispatcher("index.jsp");
